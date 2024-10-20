@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "../utils/jwt";
-import { TTokenPayload } from "../types/generic/token";
-import { User } from "../types/schemas";
+import { TTokenPayload } from "../typelist/generic/token";
+import { User } from "../typelist/schemas";
 
 export const authorization = async (
   req: Request,

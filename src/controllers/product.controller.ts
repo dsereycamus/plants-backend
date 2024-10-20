@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Product } from "../types/schemas";
+import { Product } from "../typelist/schemas";
 
 export const productController = {
   getAllProducts: async (_req: Request, res: Response): Promise<void> => {

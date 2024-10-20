@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { User } from "../types/schemas";
+import { User } from "../typelist/schemas";
 import { comparePassword, encryptPassword } from "../utils/encrypter";
 import { sign } from "../utils/jwt";
 

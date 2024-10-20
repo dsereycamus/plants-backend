@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import path from "path";
 import { Sequelize } from "sequelize-typescript";
-import { Product, Purchase, User } from "../types/schemas";
+import { Product, Purchase, User } from "../typelist/schemas";
 
 config({
   path: path.join(__dirname, "../../.env"),

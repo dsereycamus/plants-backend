@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Product, Purchase } from "../types/schemas";
+import { Product, Purchase } from "../typelist/schemas";
 
 export const purchaseController = {
   getPurchaseHistory: async (req: Request, res: Response): Promise<void> => {

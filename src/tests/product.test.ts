@@ -4,7 +4,7 @@ import { config } from "dotenv";
 import path from "path";
 import { assertDatabaseConnection } from "../configs/database";
 import { Server } from "http";
-import { Product, User } from "../types/schemas";
+import { Product, User } from "../typelist/schemas";
 config({
   path: path.join(__dirname, "../.env"),
 });

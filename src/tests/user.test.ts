@@ -1,6 +1,6 @@
 import { app } from "../configs/server";
 import request from "supertest";
-import { User } from "../types/schemas";
+import { User } from "../typelist/schemas";
 import { config } from "dotenv";
 import path from "path";
 import { assertDatabaseConnection } from "../configs/database";
