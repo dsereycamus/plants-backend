@@ -6,7 +6,7 @@ export const productController = {
     try {
       const products = await Product.findAll().then((products) =>
         products.map((product) => ({
-          ...product,
+          ...product.dataValues,
           image: product.image.toString("base64"),
         }))
       );

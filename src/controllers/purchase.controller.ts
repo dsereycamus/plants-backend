@@ -61,7 +61,6 @@ export const purchaseController = {
         !paymentMethod ||
         !buyerData
       ) {
-        console.log(products);
         res.status(400).send({ message: "Debes ingresar todos los campos." });
         return;
       }
