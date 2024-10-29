@@ -4,12 +4,7 @@ import { Product } from "../typelist/schemas";
 export const productController = {
   getAllProducts: async (_req: Request, res: Response): Promise<void> => {
     try {
-      const products = await Product.findAll().then((products) =>
-        products.map((product) => ({
-          ...product.dataValues,
-          image: product.image.toString("base64"),
-        }))
-      );
+      const products = await Product.findAll();
       res.status(200).send({
         message: "Se pudo conseguir el listado de productos",
         data: products,
@@ -27,9 +22,9 @@ export const productController = {
   addNewProduct: async (req: Request, res: Response): Promise<void> => {
     try {
       const { user } = req;
-      const { name, description, price, stock } = req.body;
+      const { name, description, price, stock, image } = req.body;
 
-      if (!name || !description || !price || !stock || !req.file) {
+      if (!name || !description || !price || !stock || !image) {
         res
           .status(400)
           .send({ message: "Debes ingresar todos los campos y la foto" });
@@ -39,9 +34,7 @@ export const productController = {
         name,
         description,
         price,
-        imageType: req.file?.mimetype,
-        imageName: req.file?.originalname,
-        image: req.file?.buffer,
+        image,
         stock,
         ownerId: user!.id,
       });

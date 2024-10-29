@@ -55,15 +55,7 @@ export class Product extends Model {
   price!: number;
 
   @Column
-  imageType!: string;
-
-  @Column
-  imageName!: string;
-
-  @Column({
-    type: DataType.BLOB("long"),
-  })
-  image!: Buffer;
+  image!: string;
 
   @Column
   stock!: number;
